@@ -348,8 +348,10 @@
     del.classList.add("del");
 
     del.addEventListener("click", function () {
-      event.target.parentNode.remove();
+      event.target.parentNode.parentNode.remove();
       delfun(elem);
+      document.querySelector("#bagcount").textContent=arr2.length
+      amt()
       bagn()
     });
     div.append(div2, div1);

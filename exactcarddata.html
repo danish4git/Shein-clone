@@ -417,14 +417,20 @@
   document.querySelector(".desright").append(p1, p2, p3, p4, p5, p6, p7);
 
   ///////////////////addbag function////////////////
+  var arr = JSON.parse(localStorage.getItem("carddata"));
 
   document.querySelector(".addbag").addEventListener("click", addtobag);
-  arr2 = JSON.parse(localStorage.getItem("bagitm")) || [];
-  function addtobag() {
-    arr2.push(arr);
 
+  function addtobag() {
+    
+    let arr2 = JSON.parse(localStorage.getItem("bagitm")) || [];
+    arr2.push(arr);
+    
     localStorage.setItem("bagitm", JSON.stringify(arr2));
-    bagn()
+    // bagn()
+    // bag length
+    document.querySelector("#bagcount").textContent=arr2.length
+
   }
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
